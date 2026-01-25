@@ -1,8 +1,11 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        seen = {}  # keep track of numbers and their indices
-        for i, num in enumerate(nums):
-            need = target - num
-            if need in seen:
-                return [seen[need], i]
-            seen[num] = i
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d={}
+
+        for i in range(len(nums)):
+            need =target-nums[i]
+
+            if need in d:
+                return [d[need], i]
+
+            d[nums[i]]=i
